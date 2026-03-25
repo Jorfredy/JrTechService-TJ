@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - JR Tech Service TJ</title>
+    <style>
+        /* Variables y estilos base (Iguales al resto del sitio) */
+        :root {
+            --primary-blue: #1C334A;
+            --text-dark: #2B3A4A;
+            --accent-green: #599175;
+            --light-bg: #F4F8FB;
+            --white: #FFFFFF;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+        body { background-color: var(--light-bg); color: var(--text-dark); display: flex; flex-direction: column; min-height: 100vh; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; width: 100%; }
+        
+        /* Botones y Header */
+        .btn-green { background-color: var(--accent-green); color: var(--white); padding: 10px 20px; border-radius: 20px; font-weight: bold; display: inline-block; border: none; cursor: pointer; transition: background 0.3s; }
+        .btn-green:hover { background-color: #467a60; }
+        
+        header { background-color: var(--white); padding: 15px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo img { height: 50px; }
+        nav ul { display: flex; gap: 20px; font-weight: 600; }
+
+        /* Estilos de la página Nosotros */
+        main { flex-grow: 1; padding: 60px 0; }
+        
+        .section-title { text-align: center; margin-bottom: 50px; font-size: 2rem; color: var(--primary-blue); }
+        .section-title span { color: var(--accent-green); }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 30px;
+        }
+
+        .about-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .about-card:hover { transform: translateY(-5px); }
+
+        .about-card h2 {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        /* La línea verde debajo del título que tenías en tu diseño original */
+        .about-card h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-green);
+            border-radius: 2px;
+        }
+
+        .about-card p { font-size: 1.05rem; line-height: 1.6; color: #444; margin-bottom: 15px; }
+
+        .about-list li {
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            line-height: 1.5;
+        }
+
+        .about-list li::before {
+            content: "✔";
+            color: var(--accent-green);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Footer */
+        footer { background-color: var(--primary-blue); color: var(--white); padding: 30px 0; border-top-left-radius: 50px; margin-top: auto; }
+        .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        .footer-info { display: flex; gap: 30px; font-size: 1rem; align-items: center; flex-wrap: wrap; }
+        .footer-logo img { height: 60px; filter: brightness(0) invert(1); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content { flex-direction: column; gap: 15px; }
+            .about-grid { grid-template-columns: 1fr; }
+            .footer-content { flex-direction: column; gap: 20px; text-align: center; }
+            .footer-info { flex-direction: column; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html"><img src="logo.png" alt="JR Tech Service TJ"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <a href="contacto.html" class="btn-green">✉ Contáctanos</a>
+        </div>
+    </header>
+
+    <!-- Contenido Principal: Nosotros -->
+    <main class="container">
+        <h1 class="section-title">Más sobre <span>JR Tech Service - TJ</span></h1>
+
+        <div class="about-grid">
+            <!-- Tarjeta 1: Quiénes Somos -->
+            <div class="about-card">
+                <h2>¿Quiénes somos?</h2>
+                <p>JR Tech Service es un servicio técnico en Tijuana especializado en la instalación y configuración de equipos, así como en la reparación de PCs, laptops y consolas.</p>
+                <p>Nos enfocamos en el trabajo bien hecho y profesional, entregando diagnósticos claros y manteniendo procesos 100% transparentes con nuestros clientes.</p>
+            </div>
+
+            <!-- Tarjeta 2: Por qué nosotros -->
+            <div class="about-card">
+                <h2>¿Por qué nosotros?</h2>
+                <ul class="about-list">
+                    <li>Atención personalizada adaptada a tus necesidades.</li>
+                    <li>Diagnóstico claro, honesto y sin letras pequeñas.</li>
+                    <li>Protección total de tus componentes y datos personales/empresariales.</li>
+                    <li>Garantía de 15 días en nuestros servicios.</li>
+                </ul>
+            </div>
+
+            <!-- Tarjeta 3: Cómo trabajamos -->
+            <div class="about-card">
+                <h2>¿Cómo trabajamos?</h2>
+                <ul class="about-list">
+                    <li>Diagnóstico previo a cualquier reparación o instalación.</li>
+                    <li>Checklist detallado de recepción y entrega de equipos.</li>
+                    <li>Autorización del cliente antes de iniciar cualquier trabajo.</li>
+                    <li>Pruebas de estrés y funcionamiento finales antes de la entrega.</li>
+                </ul>
+            </div>
+
+            <!-- Tarjeta 4: Garantía -->
+            <div class="about-card">
+                <h2>¿Garantía?</h2>
+                <p>Respaldamos nuestro trabajo. Todas las reparaciones cuentan con una <strong>garantía de 15 días</strong> aplicable únicamente sobre el trabajo realizado por nuestros técnicos.</p>
+                <p style="font-size: 0.9rem; color: #666; margin-top: 10px;"><em>* Nota: La garantía no cubre daños por golpes, humedad, manipulación externa por terceros o fallas no relacionadas con la reparación original.</em></p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-info">
+                <div>📞 663 491 7818</div>
+                <div>✉ info@jrtechservice.tech</div>
+                <div>✉ ventas@jrtechservice.tech</div>
+            </div>
+            <div class="footer-logo">
+                <img src="logof.png" alt="JR Tech Service TJ">
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

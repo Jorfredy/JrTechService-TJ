@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - JR Tech Service TJ</title>
+    <style>
+        /* Variables y estilos base */
+        :root {
+            --primary-blue: #1C334A;
+            --text-dark: #2B3A4A;
+            --accent-green: #599175;
+            --light-bg: #F4F8FB;
+            --white: #FFFFFF;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+        body { background-color: var(--light-bg); color: var(--text-dark); display: flex; flex-direction: column; min-height: 100vh; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; width: 100%; }
+        
+        /* Botones y Header */
+        .btn-green { background-color: var(--accent-green); color: var(--white); padding: 10px 20px; border-radius: 20px; font-weight: bold; display: inline-block; border: none; cursor: pointer; transition: background 0.3s; }
+        .btn-green:hover { background-color: #467a60; }
+        
+        header { background-color: var(--white); padding: 15px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo img { height: 50px; }
+        nav ul { display: flex; gap: 20px; font-weight: 600; }
+
+        /* Estilos de la página Servicios */
+        main { flex-grow: 1; padding: 50px 0; }
+
+        .services-header { text-align: center; margin-bottom: 50px; }
+        .services-header h1 { font-size: 2.5rem; color: var(--primary-blue); margin-bottom: 15px; }
+        .services-header p { font-size: 1.1rem; color: #555; max-width: 800px; margin: 0 auto; line-height: 1.6; }
+
+        .service-category { margin-bottom: 60px; }
+        .service-category h2 { 
+            font-size: 1.8rem; 
+            color: var(--primary-blue); 
+            margin-bottom: 30px; 
+            display: flex; 
+            align-items: center; 
+            gap: 10px;
+        }
+        .service-category h2::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 30px;
+            background-color: var(--accent-green);
+            border-radius: 4px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            border-top: 4px solid var(--accent-green);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .service-card h3 { color: var(--primary-blue); margin-bottom: 20px; font-size: 1.3rem; }
+        
+        .service-card ul li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            font-size: 1.05rem;
+            color: #444;
+            line-height: 1.4;
+        }
+        .service-card ul li::before {
+            content: "✔";
+            color: var(--accent-green);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Banner CTA */
+        .cta-banner {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+			margin-bottom: 60px; /* <--- ESTA LÍNEA CREARÁ EL ESPACIO */
+        }
+        .cta-banner h3 { font-size: 1.8rem; margin-bottom: 15px; }
+        .cta-banner p { font-size: 1.1rem; margin-bottom: 25px; opacity: 0.9; }
+
+        /* Footer */
+        footer { background-color: var(--primary-blue); color: var(--white); padding: 30px 0; border-top-left-radius: 50px; margin-top: auto; }
+        .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        .footer-info { display: flex; gap: 30px; font-size: 1rem; align-items: center; flex-wrap: wrap; }
+        .footer-logo img { height: 60px; filter: brightness(0) invert(1); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content { flex-direction: column; gap: 15px; }
+            .footer-content { flex-direction: column; gap: 20px; text-align: center; }
+            .footer-info { flex-direction: column; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html"><img src="logo.png" alt="JR Tech Service TJ"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <a href="contacto.html" class="btn-green">✉ Contáctanos</a>
+        </div>
+    </header>
+
+    <!-- Contenido Principal: Servicios -->
+    <main class="container">
+        
+        <div class="services-header">
+            <h1>Nuestros Servicios</h1>
+            <p>Brindamos soluciones tecnológicas integrales. Desde el mantenimiento de tu equipo personal hasta la configuración completa de infraestructura para pequeñas empresas, escuelas y oficinas.</p>
+        </div>
+
+        <!-- Categoría 1: Corporativo -->
+        <section class="service-category">
+            <h2>Soluciones para Empresas y Escuelas</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Instalación y Configuración</h3>
+                    <ul>
+                        <li>Instalación y configuración de equipos de cómputo nuevos.</li>
+                        <li>Implementación de imágenes del sistema (ISO corporativas).</li>
+                        <li>Integración de equipos a dominios empresariales.</li>
+                        <li>Migración segura de archivos y perfiles de usuario.</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Redes y Seguridad</h3>
+                    <ul>
+                        <li>Configuración y optimización de redes Wi-Fi y LAN.</li>
+                        <li>Migración a la Nube (Cloud Services).</li>
+                        <li>Auditoría y seguridad informática básica.</li>
+                        <li>Configuración de respaldos de información automatizados.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categoría 2: Individual / Reparación -->
+        <section class="service-category">
+            <h2>Soporte Técnico y Reparación</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Mantenimiento de Equipos</h3>
+                    <ul>
+                        <li>Diagnóstico y reparación de PCs de escritorio y laptops.</li>
+                        <li>Mantenimiento preventivo y correctivo.</li>
+                        <li>Limpieza profunda de Hardware y Software.</li>
+                        <li>Optimización de sistemas operativos lentos.</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Gaming y Especializados</h3>
+                    <ul>
+                        <li>Diagnóstico y reparación de consolas de videojuegos.</li>
+                        <li>Instalación de software especializado.</li>
+                        <li>Actualización de componentes (Discos de estado sólido, Memoria RAM).</li>
+                        <li>Limpieza profunda de consolas y equipos de alto desempeño.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Banner de llamada a la acción -->
+        <div class="cta-banner">
+            <h3>¿No encuentras el servicio que buscas?</h3>
+            <p>Contáctanos y cuéntanos tu problema. Haremos un diagnóstico personalizado para darte la mejor solución.</p>
+            <a href="contacto.html" class="btn-green" style="background-color: var(--white); color: var(--primary-blue);">Solicitar Cotización</a>
+        </div>
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-info">
+                <div>📞 663 491 7818</div>
+                <div>✉ info@jrtechservice.tech</div>
+                <div>✉ ventas@jrtechservice.tech</div>
+            </div>
+            <div class="footer-logo">
+                <img src="logof.png" alt="JR Tech Service TJ">
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

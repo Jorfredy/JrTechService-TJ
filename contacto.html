@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - JR Tech Service TJ</title>
+    <style>
+        /* Importamos las mismas variables y estilos base */
+        :root {
+            --primary-blue: #1C334A;
+            --text-dark: #2B3A4A;
+            --accent-green: #599175;
+            --light-bg: #F4F8FB;
+            --white: #FFFFFF;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+        body { background-color: var(--light-bg); color: var(--text-dark); display: flex; flex-direction: column; min-height: 100vh; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; width: 100%; }
+        
+        /* Botones y Header (Igual que el Index) */
+        .btn-green { background-color: var(--accent-green); color: var(--white); padding: 10px 20px; border-radius: 20px; font-weight: bold; display: inline-block; border: none; cursor: pointer; transition: background 0.3s; }
+        .btn-green:hover { background-color: #467a60; }
+        
+        header { background-color: var(--white); padding: 15px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo img { height: 50px; }
+        nav ul { display: flex; gap: 20px; font-weight: 600; }
+        
+        /* Estilos específicos de la página de Contacto */
+        main { flex-grow: 1; padding: 60px 0; }
+        
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .contact-info-section h1 { font-size: 2.2rem; margin-bottom: 20px; color: var(--primary-blue); }
+        .contact-info-section p { font-size: 1.1rem; margin-bottom: 30px; line-height: 1.6; }
+        
+        .info-item { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; font-size: 1.1rem; font-weight: 600; }
+        .info-item span { color: var(--accent-green); font-size: 1.5rem; }
+
+        .contact-form { display: flex; flex-direction: column; gap: 15px; }
+        .form-group { display: flex; flex-direction: column; gap: 5px; }
+        .form-group label { font-weight: bold; font-size: 0.95rem; }
+        .form-group input, .form-group textarea {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus, .form-group textarea:focus { border-color: var(--accent-green); }
+        .form-group textarea { resize: vertical; min-height: 120px; }
+        
+        .btn-submit { margin-top: 10px; width: 100%; font-size: 1.1rem; padding: 15px; }
+
+        /* Footer (Igual que el Index) */
+        footer { background-color: var(--primary-blue); color: var(--white); padding: 30px 0; border-top-left-radius: 50px; margin-top: auto; }
+        .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        .footer-info { display: flex; gap: 30px; font-size: 1.1rem; align-items: center; flex-wrap: wrap; }
+        .footer-logo img { height: 60px; filter: brightness(0) invert(1); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content { flex-direction: column; gap: 15px; }
+            .contact-wrapper { grid-template-columns: 1fr; padding: 20px; }
+            .footer-content { flex-direction: column; gap: 20px; text-align: center; }
+            .footer-info { flex-direction: column; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html"><img src="logo.png" alt="JR Tech Service TJ"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <a href="contacto.html" class="btn-green">✉ Contáctanos</a>
+        </div>
+    </header>
+
+    <!-- Contenido Principal: Contacto -->
+    <main class="container">
+        <div class="contact-wrapper">
+            
+            <!-- Información de Contacto -->
+            <div class="contact-info-section">
+                <h1>Estamos aquí para ayudarte</h1>
+                <p>¿Tienes dudas sobre nuestros servicios o necesitas un presupuesto personalizado para tu negocio? Escríbenos y nuestro equipo técnico se pondrá en contacto contigo a la brevedad.</p>
+                
+                <div class="info-item">
+                    <span>📞</span>
+                    <div>663 491 7818</div>
+                </div>
+                <div class="info-item">
+                    <span>✉</span>
+                    <div>info@jrtechservice.tech</div>
+                </div>
+                <div class="info-item">
+                    <span>✉</span>
+                    <div>ventas@jrtechservice.tech</div>
+                </div>
+                <div class="info-item">
+                    <span>📍</span>
+                    <div>Tijuana, Baja California</div>
+                </div>
+            </div>
+
+            <!-- Formulario -->
+            <form class="contact-form" id="formulario-whatsapp">
+                <div class="form-group">
+                    <label for="nombre">Nombre o Empresa</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez / Mi Empresa SA de CV" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="(664) 000 0000">
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">¿En qué podemos ayudarte?</label>
+                    <textarea id="mensaje" name="mensaje" placeholder="Describe brevemente lo que necesitas..." required></textarea>
+                </div>
+                <button type="submit" class="btn-green btn-submit">Enviar Mensaje</button>
+            </form>
+
+        </div>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-info">
+                <div>📞 663 491 7818</div>
+                <div>✉ info@jrtechservice.tech</div>
+                <div>✉ ventas@jrtechservice.tech</div>
+            </div>
+            <div class="footer-logo">
+                <img src="logof.png" alt="JR Tech Service TJ">
+            </div>
+        </div>
+    </footer>
+<script>
+        document.getElementById('formulario-whatsapp').addEventListener('submit', function(event) {
+            // Evitamos que la página se recargue al dar clic
+            event.preventDefault();
+
+            // Obtenemos lo que el cliente escribió en las cajas
+            const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+            const telefono = document.getElementById('telefono').value;
+            const mensaje = document.getElementById('mensaje').value;
+
+            // Armamos la plantilla del mensaje de WhatsApp
+            let textoWhatsApp = "¡Hola JR Tech Service! 👋 Necesito información.\n\n";
+            textoWhatsApp += "*Mis datos son:*\n";
+            textoWhatsApp += "👤 Nombre: " + nombre + "\n";
+            textoWhatsApp += "✉️ Correo: " + email + "\n";
+            if(telefono) { textoWhatsApp += "📞 Teléfono: " + telefono + "\n"; }
+            textoWhatsApp += "\n*Mi consulta es:*\n" + mensaje;
+
+            // Codificamos el texto para que la URL lo lea correctamente (espacios, saltos de línea)
+            const textoCodificado = encodeURIComponent(textoWhatsApp);
+
+            // Tu número con el código de país de México (52)
+            const numeroDestino = "526634917818";
+
+            // Creamos el enlace oficial de la API de WhatsApp
+            const url = "https://wa.me/" + numeroDestino + "?text=" + textoCodificado;
+
+            // Abrimos WhatsApp en una pestaña nueva
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+</html>
