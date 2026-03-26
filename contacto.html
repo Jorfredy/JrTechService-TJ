@@ -176,11 +176,11 @@
             const mensaje = document.getElementById('mensaje').value;
 
             // Armamos la plantilla del mensaje de WhatsApp
-            let textoWhatsApp = "¡Hola JR Tech Service! 👋 Necesito información.\n\n";
+            let textoWhatsApp = "¡Hola JR Tech Service! Necesito información.\n\n";
             textoWhatsApp += "*Mis datos son:*\n";
-            textoWhatsApp += "👤 Nombre: " + nombre + "\n";
-            textoWhatsApp += "✉️ Correo: " + email + "\n";
-            if(telefono) { textoWhatsApp += "📞 Teléfono: " + telefono + "\n"; }
+            textoWhatsApp += " Nombre: " + nombre + "\n";
+            textoWhatsApp += " Correo: " + email + "\n";
+            if(telefono) { textoWhatsApp += " Teléfono: " + telefono + "\n"; }
             textoWhatsApp += "\n*Mi consulta es:*\n" + mensaje;
 
             // Codificamos el texto para que la URL lo lea correctamente (espacios, saltos de línea)
